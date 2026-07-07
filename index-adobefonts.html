@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Papaya Híbrida | East-West Seed México</title>
+<!-- Tipografía: Trade Gothic vía Adobe Fonts (Typekit).
+     Reemplaza "xxxxxxx" por el ID de tu Web Project de Adobe Fonts que incluya Trade Gothic. -->
+<link rel="stylesheet" href="https://use.typekit.net/xxxxxxx.css">
+<style>
+:root {
+  --ews-red:      #C8102E;
+  --ews-red-dk:   #a00d25;
+  --ews-green:    #1B5E20;
+  --ews-green-md: #2E7D32;
+  --ews-green-lt: #4CAF50;
+  --ews-black:    #111111;
+  --ews-charcoal: #2C2C2C;
+  --ews-gray:     #6B6B6B;
+  --ews-gray-lt:  #F5F5F5;
+  --ews-border:   #E0E0E0;
+  --ews-white:    #FFFFFF;
+  --ews-cream:    #FAFAF8;
+  --font-body:    'Trade Gothic', trade-gothic, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-dis:     'Trade Gothic', trade-gothic, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--ews-white);color:var(--ews-black);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--ews-white);border-bottom:1px solid var(--ews-border);height:72px;display:flex;align-items:center}
+.nav-inner{max-width:1280px;margin:0 auto;width:100%;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:.875rem}
+.logo-mark{display:flex;align-items:center;gap:3px}
+.arr{width:0;height:0;border-top:9px solid transparent;border-bottom:9px solid transparent}
+.arr.r{border-left:12px solid var(--ews-red)}
+.arr.l{border-right:12px solid var(--ews-red)}
+.seed-dot{width:7px;height:12px;background:var(--ews-green);border-radius:50%}
+.logo-text{font-family:var(--font-dis);font-weight:700;font-size:.85rem;letter-spacing:.04em;color:var(--ews-black);line-height:1.2}
+.logo-sub{font-size:.62rem;font-weight:400;color:var(--ews-gray);letter-spacing:.08em;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:1.75rem}
+.nav-links a{font-size:.85rem;font-weight:500;color:var(--ews-charcoal);transition:color .15s}
+.nav-links a:hover{color:var(--ews-red)}
+.nav-cta{background:var(--ews-red)!important;color:#fff!important;padding:.45rem 1.1rem;border-radius:2px;font-size:.78rem!important;font-weight:700!important;transition:background .15s!important}
+.nav-cta:hover{background:var(--ews-red-dk)!important}
+
+/* HERO */
+.hero{margin-top:72px;background:var(--ews-green);position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('Belanova.jpg') center/cover no-repeat;opacity:.35;z-index:0}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(110deg,rgba(27,94,32,.97) 0%,rgba(27,94,32,.82) 55%,rgba(27,94,32,.35) 100%);z-index:1}
+.hero-inner{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:5.5rem 2rem 4.5rem;display:grid;grid-template-columns:1fr 400px;gap:3.5rem;align-items:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-dis);font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:1rem}
+.hero-eyebrow::before{content:'';width:22px;height:2px;background:var(--ews-red)}
+.hero h1{font-family:var(--font-dis);font-size:clamp(2.3rem,4.2vw,3.75rem);font-weight:800;color:#fff;line-height:1.07;letter-spacing:-.015em;margin-bottom:1.125rem}
+.hero h1 em{font-style:normal;color:#81c784}
+.hero-desc{font-size:.975rem;color:rgba(255,255,255,.68);max-width:500px;line-height:1.75;margin-bottom:2rem}
+.hero-btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;padding:.7rem 1.4rem;font-size:.875rem;font-weight:600;border-radius:2px;transition:all .18s;cursor:pointer;border:none;font-family:var(--font-body)}
+.btn-red{background:var(--ews-red);color:#fff}.btn-red:hover{background:var(--ews-red-dk)}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.07)}
+.hero-card{background:rgba(255,255,255,.065);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.1);border-radius:3px;overflow:hidden}
+.hero-card-head{background:var(--ews-red);padding:.8rem 1.25rem;font-family:var(--font-dis);font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff}
+.hero-stat{padding:1rem 1.25rem;border-bottom:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.hero-stat:last-child{border-bottom:none}
+.hs-lbl{font-size:.78rem;color:rgba(255,255,255,.5)}
+.hs-val{font-family:var(--font-dis);font-size:1.45rem;font-weight:800;color:#81c784;line-height:1}
+.hs-unit{font-size:.68rem;color:rgba(255,255,255,.35)}
+
+/* STRIP */
+.strip{background:var(--ews-gray-lt);border-top:1px solid var(--ews-border);border-bottom:1px solid var(--ews-border);padding:2.25rem 2rem}
+.strip-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.s-stat{text-align:center}
+.s-num{font-family:var(--font-dis);font-size:2.4rem;font-weight:800;color:var(--ews-green);line-height:1;margin-bottom:.2rem}
+.s-lbl{font-size:.78rem;color:var(--ews-gray)}
+
+/* SHARED */
+.section{padding:4.5rem 2rem}
+.inner{max-width:1280px;margin:0 auto}
+.ew{display:inline-flex;align-items:center;gap:.45rem;font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ews-red);margin-bottom:.75rem}
+.ew::before{content:'';width:18px;height:2px;background:var(--ews-red)}
+.st{font-family:var(--font-dis);font-size:clamp(1.65rem,2.8vw,2.35rem);font-weight:800;color:var(--ews-black);line-height:1.15;letter-spacing:-.01em;margin-bottom:.75rem}
+.ss{font-size:.95rem;color:var(--ews-gray);max-width:560px;line-height:1.7}
+.sh{margin-bottom:2.75rem}
+
+/* VENTAJAS */
+.ventajas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--ews-border);border:1px solid var(--ews-border);border-radius:3px;overflow:hidden}
+.vi{background:var(--ews-white);padding:1.875rem;transition:background .18s}
+.vi:hover{background:var(--ews-gray-lt)}
+.vi-icon{width:42px;height:42px;background:var(--ews-green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.15rem;margin-bottom:.875rem}
+.vi-t{font-family:var(--font-dis);font-size:.975rem;font-weight:700;color:var(--ews-black);margin-bottom:.4rem}
+.vi-d{font-size:.85rem;color:var(--ews-gray);line-height:1.6}
+
+/* HÍBRIDOS */
+.hibridos{background:var(--ews-cream)}
+.hsel{display:flex;border:1px solid var(--ews-border);border-radius:2px;overflow:hidden;margin-bottom:2.25rem;width:fit-content}
+.hb{padding:.6rem 1.375rem;font-size:.84rem;font-weight:600;font-family:var(--font-body);background:var(--ews-white);color:var(--ews-gray);border:none;border-right:1px solid var(--ews-border);cursor:pointer;transition:all .15s}
+.hb:last-child{border-right:none}
+.hb.active{background:var(--ews-green);color:#fff}
+.hb:not(.active):hover{background:var(--ews-gray-lt);color:var(--ews-black)}
+.hpanel{display:none}
+.hpanel.active{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.hvtag{display:inline-block;padding:.22rem .7rem;background:var(--ews-red);color:#fff;font-size:.63rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-radius:1px;margin-bottom:.875rem}
+.hname{font-family:var(--font-dis);font-size:2.4rem;font-weight:800;color:var(--ews-black);line-height:1;letter-spacing:-.02em;margin-bottom:1.125rem}
+.hname span{color:var(--ews-green)}
+.hdesc{font-size:.9rem;color:var(--ews-gray);line-height:1.75;margin-bottom:.875rem}
+.htags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:1.125rem}
+.htag{padding:.28rem .7rem;background:var(--ews-gray-lt);border:1px solid var(--ews-border);border-radius:100px;font-size:.73rem;font-weight:500;color:var(--ews-charcoal)}
+.specs{background:var(--ews-white);border:1px solid var(--ews-border);border-radius:3px;overflow:hidden}
+.specs-head{background:var(--ews-green);color:#fff;padding:.8rem 1.125rem;font-family:var(--font-dis);font-size:.67rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.spec-r{display:flex;justify-content:space-between;align-items:center;padding:.75rem 1.125rem;border-bottom:1px solid var(--ews-border);gap:1rem}
+.spec-r:last-child{border-bottom:none}
+.spec-r:nth-child(even){background:var(--ews-gray-lt)}
+.sk{font-size:.79rem;color:var(--ews-gray)}
+.sv{font-size:.84rem;font-weight:600;color:var(--ews-black);text-align:right}
+.sv.g{color:var(--ews-green-md)}
+.sv.r{color:var(--ews-red)}
+
+/* PASOS */
+.tecnico{background:var(--ews-white)}
+.pasos{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.pasos::before{content:'';position:absolute;top:27px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,var(--ews-green),var(--ews-green-lt))}
+.paso{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 .75rem;position:relative;z-index:1}
+.paso-c{width:54px;height:54px;border-radius:50%;background:var(--ews-green);color:#fff;font-family:var(--font-dis);font-size:1.15rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:.875rem;border:3px solid var(--ews-white);box-shadow:0 0 0 2px var(--ews-green)}
+.paso-t{font-family:var(--font-dis);font-size:.875rem;font-weight:700;color:var(--ews-black);margin-bottom:.35rem}
+.paso-d{font-size:.76rem;color:var(--ews-gray);line-height:1.55}
+
+/* CALENDARIO */
+.calendario{background:var(--ews-gray-lt)}
+.cal-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.cal-card{background:var(--ews-white);border:1px solid var(--ews-border);border-radius:3px;overflow:hidden}
+.cal-head{padding:.875rem 1.375rem}
+.cal-head.gn{background:var(--ews-green)}
+.cal-head.rd{background:var(--ews-red)}
+.cal-period{font-family:var(--font-dis);font-size:.67rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:.2rem}
+.cal-vars{font-family:var(--font-dis);font-size:1.1rem;font-weight:800;color:#fff}
+.cal-body{padding:1.375rem}
+.cal-body p{font-size:.865rem;color:var(--ews-gray);line-height:1.7}
+.months{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.875rem}
+.mo{padding:.22rem .6rem;border-radius:100px;font-size:.7rem;font-weight:600}
+.mo.on{background:#e8f5e9;color:var(--ews-green-md);border:1px solid #c8e6c9}
+.mo.off{background:var(--ews-gray-lt);color:#bbb;border:1px solid var(--ews-border)}
+
+/* DENSIDAD */
+.densidad{background:var(--ews-green)}
+.densidad .ew{color:#a5d6a7}.densidad .ew::before{background:#a5d6a7}
+.densidad .st{color:#fff}.densidad .ss{color:rgba(255,255,255,.6)}
+.dens-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.dens-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11);border-radius:3px;padding:1.875rem;text-align:center;transition:background .2s}
+.dens-card:hover{background:rgba(255,255,255,.11)}
+.dens-num{font-family:var(--font-dis);font-size:2.8rem;font-weight:800;color:#a5d6a7;line-height:1;margin-bottom:.15rem}
+.dens-unit{font-size:.72rem;color:rgba(255,255,255,.4);letter-spacing:.08em;margin-bottom:.65rem}
+.dens-t{font-family:var(--font-dis);font-size:.975rem;font-weight:700;color:#fff;margin-bottom:.4rem}
+.dens-d{font-size:.8rem;color:rgba(255,255,255,.52);line-height:1.6}
+
+/* NUTRICIÓN */
+.nutricion{background:var(--ews-white)}
+.nut-layout{display:grid;grid-template-columns:1.1fr 1fr;gap:3.5rem;align-items:start}
+.nut-table{border:1px solid var(--ews-border);border-radius:3px;overflow:hidden}
+.nt-head{background:var(--ews-green);display:grid;grid-template-columns:2.3fr 1fr 1fr 1fr 1fr;padding:.7rem 1rem}
+.nth{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.65);text-align:center}
+.nth:first-child{text-align:left}
+.nt-row{display:grid;grid-template-columns:2.3fr 1fr 1fr 1fr 1fr;padding:.65rem 1rem;border-bottom:1px solid var(--ews-border);align-items:center}
+.nt-row:last-child{border-bottom:none}
+.nt-row:nth-child(even){background:var(--ews-gray-lt)}
+.nr-n{font-size:.8rem;font-weight:500;color:var(--ews-black)}
+.nr-v{font-size:.78rem;color:var(--ews-gray);text-align:center;font-variant-numeric:tabular-nums}
+.nr-v.hl{color:var(--ews-green-md);font-weight:700}
+.nut-note{font-size:.73rem;color:#999;margin-top:.65rem;line-height:1.55}
+.nut-info h3{font-family:var(--font-dis);font-size:1.25rem;font-weight:700;color:var(--ews-black);margin-bottom:.65rem}
+.nut-info p{font-size:.875rem;color:var(--ews-gray);line-height:1.7;margin-bottom:.875rem}
+.nut-demands{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ews-border);border:1px solid var(--ews-border);border-radius:3px;overflow:hidden;margin-top:1.25rem}
+.nd{background:var(--ews-white);padding:1.125rem;transition:background .15s}
+.nd:hover{background:var(--ews-gray-lt)}
+.nd-val{font-family:var(--font-dis);font-size:1.45rem;font-weight:800;color:var(--ews-green);line-height:1}
+.nd-lbl{font-size:.76rem;color:var(--ews-gray);margin-top:.15rem}
+
+/* RIEGO */
+.riego{background:var(--ews-gray-lt)}
+.riego-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.riego-text p{font-size:.9rem;color:var(--ews-gray);line-height:1.75;margin-bottom:1rem}
+.rkey{display:flex;gap:.7rem;align-items:flex-start;margin-bottom:.875rem}
+.rkey-dot{width:7px;height:7px;border-radius:50%;background:var(--ews-red);flex-shrink:0;margin-top:7px}
+.rkey-t{font-size:.855rem;color:var(--ews-charcoal);line-height:1.6}
+.rkey-t strong{color:var(--ews-black)}
+.riego-panel{background:var(--ews-white);border:1px solid var(--ews-border);border-radius:3px;overflow:hidden}
+.riego-ph{background:var(--ews-black);padding:.875rem 1.125rem;font-family:var(--font-dis);font-size:.67rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.rsr{display:flex;justify-content:space-between;padding:.8rem 1.125rem;border-bottom:1px solid var(--ews-border);align-items:center;gap:1rem}
+.rsr:last-child{border-bottom:none}
+.rsr:nth-child(even){background:var(--ews-gray-lt)}
+.rsr-l{font-size:.79rem;color:var(--ews-gray)}
+.rsr-v{font-size:.845rem;font-weight:700;color:var(--ews-black);text-align:right}
+.rsr-v.g{color:var(--ews-green-md)}
+.rsr-v.r{color:var(--ews-red)}
+
+/* INDUCCIÓN */
+.induccion{background:var(--ews-green);color:#fff}
+.induccion .ew{color:#a5d6a7}.induccion .ew::before{background:#a5d6a7}
+.induccion .st{color:#fff}.induccion .ss{color:rgba(255,255,255,.62)}
+.ind-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.ind-panel{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11);border-radius:3px;overflow:hidden}
+.ind-ph{padding:.8rem 1.125rem;background:rgba(0,0,0,.2);font-size:.67rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.ind-r{display:flex;justify-content:space-between;padding:.75rem 1.125rem;border-bottom:1px solid rgba(255,255,255,.07);align-items:center}
+.ind-r:last-child{border-bottom:none}
+.ind-k{font-size:.8rem;color:rgba(255,255,255,.52)}
+.ind-v{font-size:.85rem;font-weight:700;color:#a5d6a7}
+.ind-bad{color:#ef9a9a!important}
+.ind-info p{font-size:.9rem;color:rgba(255,255,255,.68);line-height:1.75;margin-bottom:.875rem}
+.ind-alert{background:rgba(200,16,46,.18);border:1px solid rgba(200,16,46,.3);border-radius:3px;padding:.875rem 1.125rem;font-size:.8rem;color:rgba(255,255,255,.82);line-height:1.65;margin-top:.875rem}
+.ind-alert strong{color:#fff}
+
+/* FITOSANITARIO */
+.fito{background:var(--ews-white)}
+.fito-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.375rem}
+.fc{border:1px solid var(--ews-border);border-radius:3px;overflow:hidden;transition:box-shadow .2s}
+.fc:hover{box-shadow:0 3px 16px rgba(0,0,0,.07)}
+.fc-top{padding:1.125rem 1.125rem 0;display:flex;gap:.65rem;align-items:flex-start}
+.fi{width:3px;flex-shrink:0;border-radius:2px;align-self:stretch;min-height:56px}
+.fi.g{background:var(--ews-green-lt)}.fi.r{background:var(--ews-red)}.fi.b{background:var(--ews-black)}
+.fc-cnt h4{font-family:var(--font-dis);font-size:.93rem;font-weight:700;color:var(--ews-black);margin-bottom:.4rem}
+.fc-cnt p{font-size:.8rem;color:var(--ews-gray);line-height:1.62}
+.fc-note{margin:.8rem 1.125rem 1.125rem;background:var(--ews-gray-lt);border-radius:2px;padding:.7rem;font-size:.76rem;color:var(--ews-charcoal);line-height:1.6;border-left:3px solid var(--ews-border)}
+.fc-note.r{border-left-color:var(--ews-red)}
+.fc-note.g{border-left-color:var(--ews-green-lt)}
+
+/* FOOTER */
+footer{background:var(--ews-black);color:#fff;padding:2.5rem 2rem}
+.footer-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:2rem}
+.fb{display:flex;align-items:center;gap:.875rem;margin-bottom:.6rem}
+.flm{display:flex;align-items:center;gap:3px}
+.fa{width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent}
+.fa.r{border-left:10px solid var(--ews-red)}.fa.l{border-right:10px solid var(--ews-red)}
+.fsd{width:6px;height:10px;background:var(--ews-green-lt);border-radius:50%}
+.fbt{font-family:var(--font-dis);font-size:.875rem;font-weight:700;color:#fff}
+.fsub{font-size:.78rem;color:rgba(255,255,255,.38)}
+.fsl{font-family:var(--font-dis);font-size:.975rem;font-weight:700;color:#81c784;font-style:italic;margin-top:.4rem}
+.flinks{display:flex;gap:1.375rem;flex-wrap:wrap}
+.flinks a{font-size:.78rem;color:rgba(255,255,255,.4);transition:color .15s}
+.flinks a:hover{color:#fff}
+.fbot{max-width:1280px;margin:1.75rem auto 0;padding-top:1.375rem;border-top:1px solid rgba(255,255,255,.08);font-size:.73rem;color:rgba(255,255,255,.22);display:flex;justify-content:space-between;gap:.5rem;flex-wrap:wrap}
+
+/* GALERÍA */
+.galeria{background:var(--ews-black);padding:0;overflow:hidden}
+.galeria-strip{display:grid;grid-template-columns:2fr 1fr 1fr;height:420px}
+.gal-img{overflow:hidden;position:relative}
+.gal-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.gal-img:hover img{transform:scale(1.04)}
+.gal-img-label{position:absolute;bottom:0;left:0;right:0;padding:.875rem 1.125rem;background:linear-gradient(0deg,rgba(0,0,0,.7) 0%,transparent 100%);font-family:var(--font-dis);font-size:.8rem;font-weight:700;color:#fff;letter-spacing:.06em}
+.gal-col{display:grid;grid-template-rows:1fr 1fr}
+
+/* FOTO en panel de híbridos */
+.hp-photo{width:100%;height:220px;object-fit:cover;border-radius:3px;margin-bottom:1.25rem;border:1px solid var(--ews-border)}
+
+/* FOTO en sección riego */
+.riego-photo{width:100%;border-radius:3px;margin-bottom:1.25rem;overflow:hidden;border:1px solid var(--ews-border)}
+.riego-photo img{width:100%;height:200px;object-fit:cover;display:block}
+
+/* FOTO banner inducción */
+.ind-photo{width:100%;height:180px;object-fit:cover;border-radius:3px;margin-bottom:1.25rem;border:1px solid rgba(255,255,255,.1)}
+
+@media(max-width:960px){
+  .galeria-strip{grid-template-columns:1fr;height:auto}
+  .gal-col{grid-template-rows:1fr}
+  .galeria-strip{grid-template-columns:1fr 1fr}
+}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.reveal.show{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .hero-inner,.hpanel.active,.nut-layout,.riego-layout,.ind-layout{grid-template-columns:1fr}
+  .strip-inner,.dens-grid,.cal-grid{grid-template-columns:1fr 1fr}
+  .ventajas-grid,.fito-grid{grid-template-columns:1fr}
+  .pasos{grid-template-columns:1fr}.pasos::before{display:none}
+  .nav-links{display:none}
+  .hsel{overflow-x:auto;width:100%}
+  .footer-inner{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .strip-inner,.dens-grid,.cal-grid{grid-template-columns:1fr}
+  .nut-demands{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="EWS_Logo_RGB.png" alt="East-West Seed" style="height:38px;width:auto;display:block;">
+      <div class="logo-sub" style="font-size:.62rem;font-weight:400;color:var(--ews-gray);letter-spacing:.08em;text-transform:uppercase;margin-top:1px;">Papaya · México</div>
+    </a>
+    <div class="nav-links">
+      <a href="#hibridos">Híbridos</a>
+      <a href="#manejo">Manejo</a>
+      <a href="#nutricion">Nutrición</a>
+      <a href="#fitosanitario">Fitosanitario</a>
+      <a href="#ventajas" class="nav-cta">Ver ventajas</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">East-West Seed · México</div>
+      <h1>Híbridos de <em>Papaya</em><br>de Alta Genética</h1>
+      <p class="hero-desc">Maradona, Belanova, Vega y Red Sugar — variedades desarrolladas para maximizar rendimiento, calidad de fruto y adaptación a las condiciones del campo mexicano.</p>
+      <div class="hero-btns">
+        <a href="#hibridos" class="btn btn-red">Conocer híbridos</a>
+        <a href="#manejo" class="btn btn-ghost">Guía técnica</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-head">Resultados en campo</div>
+      <div class="hero-stat"><span class="hs-lbl">Frutos por planta</span><div><span class="hs-val">60+</span> <span class="hs-unit">frutos</span></div></div>
+      <div class="hero-stat"><span class="hs-lbl">Potencial de rendimiento</span><div><span class="hs-val">150</span> <span class="hs-unit">ton/ha</span></div></div>
+      <div class="hero-stat"><span class="hs-lbl">Cosecha continua</span><div><span class="hs-val">12</span> <span class="hs-unit">meses</span></div></div>
+      <div class="hero-stat"><span class="hs-lbl">Tolerancia frío transporte</span><div><span class="hs-val">8–9</span> <span class="hs-unit">°C</span></div></div>
+      <div class="hero-stat"><span class="hs-lbl">Años de experiencia comercial</span><div><span class="hs-val">11</span> <span class="hs-unit">años</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="strip">
+  <div class="strip-inner">
+    <div class="s-stat"><div class="s-num">4</div><div class="s-lbl">Variedades F1 disponibles</div></div>
+    <div class="s-stat"><div class="s-num">150</div><div class="s-lbl">Toneladas/ha de potencial</div></div>
+    <div class="s-stat"><div class="s-num">1,750</div><div class="s-lbl">Plantas/ha (densidad óptima)</div></div>
+    <div class="s-stat"><div class="s-num">8–9°C</div><div class="s-lbl">Tolerancia frío en transporte</div></div>
+  </div>
+</div>
+
+<!-- GALERÍA -->
+<div class="galeria">
+  <div class="galeria-strip">
+    <div class="gal-img">
+      <img src="Maradona_con_Gente.jpg" alt="Maradona F1 en campo con equipo">
+      <div class="gal-img-label">Maradona F1 · Equipo en campo</div>
+    </div>
+    <div class="gal-col">
+      <div class="gal-img">
+        <img src="Belanova.jpg" alt="Planta Belanova cargada">
+        <div class="gal-img-label">Belanova F1 · Carga de frutos</div>
+      </div>
+      <div class="gal-img">
+        <img src="frutamaradona.jpg" alt="Fruta Maradona en planta">
+        <div class="gal-img-label">Maradona F1 · Fruto en maduración</div>
+      </div>
+    </div>
+    <div class="gal-col">
+      <div class="gal-img" style="grid-row:span 2">
+        <img src="Fruta_belanova.jpg" alt="Pulpa Belanova cortada" style="height:100%;object-position:center top">
+        <div class="gal-img-label">Belanova F1 · Calidad de pulpa</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VENTAJAS -->
+<section class="section" id="ventajas">
+  <div class="inner">
+    <div class="sh reveal">
+      <div class="ew">Por qué elegirnos</div>
+      <h2 class="st">Ventajas de nuestros híbridos</h2>
+      <p class="ss">Genética de vanguardia para el campo mexicano. Nuestros híbridos requieren un manejo diferenciado frente a variedades OP — y los resultados lo justifican.</p>
+    </div>
+    <div class="ventajas-grid reveal">
+      <div class="vi"><div class="vi-icon">💪</div><div class="vi-t">Fuertes y Vigorosos</div><p class="vi-d">Copa muy ancha, raíz amplia y tallo grueso. Excelente anclaje incluso en condiciones de fuertes vientos.</p></div>
+      <div class="vi"><div class="vi-icon">📦</div><div class="vi-t">Excelente Vida de Anaquel</div><p class="vi-d">Pulpa firme con alta tolerancia a hongos de postcosecha (antracnosis), prolongando la vida comercial.</p></div>
+      <div class="vi"><div class="vi-icon">📈</div><div class="vi-t">Gran Productividad</div><p class="vi-d">Más de 60 frutos por planta y cosechas continuas de hasta 12 meses con frutos de primera calidad.</p></div>
+      <div class="vi"><div class="vi-icon">🍈</div><div class="vi-t">Calidad Organoléptica</div><p class="vi-d">Color intenso, maduración uniforme, alto contenido de grados Brix y sabor excepcional para exportación y mercado nacional.</p></div>
+      <div class="vi"><div class="vi-icon">🦠</div><div class="vi-t">Tolerancia a Virus y Ácaros</div><p class="vi-d">Alta tolerancia a VMAP, Meleira y ácaros, reduciendo pérdidas fitosanitarias significativamente.</p></div>
+      <div class="vi"><div class="vi-icon">❄️</div><div class="vi-t">Resistencia al Frío</div><p class="vi-d">Tolerancia al frío durante el transporte a 8–9 °C, ideal para cadenas logísticas largas y exportación.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HÍBRIDOS -->
+<section class="section hibridos" id="hibridos">
+  <div class="inner">
+    <div class="sh reveal">
+      <div class="ew">Portafolio genético</div>
+      <h2 class="st">Nuestros Híbridos F1</h2>
+      <p class="ss">Cuatro variedades diseñadas para distintos ciclos productivos y mercados de destino.</p>
+    </div>
+    <div class="hsel reveal">
+      <button class="hb active" onclick="showP('maradona',this)">Maradona F1</button>
+      <button class="hb" onclick="showP('belanova',this)">Belanova F1</button>
+      <button class="hb" onclick="showP('vega',this)">Vega F1</button>
+      <button class="hb" onclick="showP('redsugar',this)">Red Sugar F1</button>
+    </div>
+
+    <div class="hpanel active" id="p-maradona">
+      <div><div class="hvtag">Híbrido F1 · EWS Genetic</div><div class="hname">Maradona <span>F1</span></div>
+      <p class="hdesc">Planta muy vigorosa con excelente anclaje, favorecida en condiciones de fuertes vientos. Alto potencial de rendimiento especialmente en siembras entre mayo y septiembre. Buena tolerancia a Virus y Ácaros.</p>
+      <p class="hdesc">Frutas con excelente tamaño (8s y 9s) para mercado doméstico y exportación. Gran firmeza de pulpa, color intenso y maduración uniforme. Alta tolerancia a hongos de postcosecha en condiciones de lluvias (antracnosis).</p>
+      <div class="htags"><span class="htag">🌬️ Resistente a vientos</span><span class="htag">🌧️ Alta tolerancia antracnosis</span><span class="htag">📦 Exportación 8s y 9s</span><span class="htag">🦠 Tolerancia virus/ácaros</span><span class="htag">❄️ Frío 8–9°C</span></div></div>
+      <div>
+      <img class="hp-photo" src="frutamaradona.jpg" alt="Maradona F1">
+      <div class="specs"><div class="specs-head">Ficha técnica</div>
+      <div class="spec-r"><span class="sk">Trasplante óptimo</span><span class="sv g">Mayo – Septiembre</span></div>
+      <div class="spec-r"><span class="sk">Tamaño de fruto</span><span class="sv">8s y 9s</span></div>
+      <div class="spec-r"><span class="sk">Mercado destino</span><span class="sv">Nacional + Exportación</span></div>
+      <div class="spec-r"><span class="sk">Firmeza de pulpa</span><span class="sv g">Muy alta</span></div>
+      <div class="spec-r"><span class="sk">Tolerancia frío transporte</span><span class="sv">8 – 9 °C</span></div>
+      <div class="spec-r"><span class="sk">Tolerancia a virus (VMAP)</span><span class="sv g">Buena</span></div>
+      <div class="spec-r"><span class="sk">Tolerancia a ácaros</span><span class="sv g">Buena</span></div>
+      <div class="spec-r"><span class="sk">Bioestimulación recomendada</span><span class="sv r">Sí (especialmente)</span></div>
+      <div class="spec-r"><span class="sk">Evitar trasplante</span><span class="sv r">Octubre – Marzo</span></div>
+      </div></div>
+    </div>
+
+    <div class="hpanel" id="p-belanova">
+      <div><div class="hvtag">Híbrido F1 · EWS Genetic</div><div class="hname">Belanova <span>F1</span></div>
+      <p class="hdesc">Planta muy fuerte con alta productividad principalmente en época de lluvias (trasplantes mayo–septiembre). Alta tolerancia a Virus y Ácaros.</p>
+      <p class="hdesc">Frutas con excelente tamaño (8s y 9s) para mercado doméstico y exportación. Firmeza de pulpa media, color intenso y maduración uniforme. Vira de color rápidamente en campo, facilitando la identificación del punto óptimo de cosecha.</p>
+      <div class="htags"><span class="htag">🌧️ Óptima época de lluvias</span><span class="htag">🎨 Vira rápido de color</span><span class="htag">📦 Exportación 8s y 9s</span><span class="htag">❄️ Frío 8–9°C</span><span class="htag">🦠 Alta tolerancia virus/ácaros</span></div></div>
+      <div>
+      <img class="hp-photo" src="Belanova.jpg" alt="Belanova F1">
+      <div class="specs"><div class="specs-head">Ficha técnica</div>
+      <div class="spec-r"><span class="sk">Trasplante óptimo</span><span class="sv g">Mayo – Septiembre</span></div>
+      <div class="spec-r"><span class="sk">Tamaño de fruto</span><span class="sv">8s y 9s</span></div>
+      <div class="spec-r"><span class="sk">Mercado destino</span><span class="sv">Nacional + Exportación</span></div>
+      <div class="spec-r"><span class="sk">Firmeza de pulpa</span><span class="sv">Media</span></div>
+      <div class="spec-r"><span class="sk">Maduración en campo</span><span class="sv g">Rápida</span></div>
+      <div class="spec-r"><span class="sk">Tolerancia frío transporte</span><span class="sv">8 – 9 °C</span></div>
+      <div class="spec-r"><span class="sk">Tolerancia a virus</span><span class="sv g">Alta</span></div>
+      <div class="spec-r"><span class="sk">Tolerancia a ácaros</span><span class="sv g">Alta</span></div>
+      <div class="spec-r"><span class="sk">Evitar trasplante</span><span class="sv r">Octubre – Marzo</span></div>
+      </div></div>
+    </div>
+
+    <div class="hpanel" id="p-vega">
+      <div><div class="hvtag">Híbrido F1 · EWS Genetic</div><div class="hname">Vega <span>F1</span></div>
+      <p class="hdesc">Planta muy fuerte con alta productividad tanto en época de lluvias como en épocas secas (trasplantes mayo–enero). Alta tolerancia a Virus y Ácaros.</p>
+      <p class="hdesc">Frutas medianas (9 & 12) con buena firmeza de pulpa, buen formato, color intenso, muy buen sabor y excelente vida de anaquel. Vira de color rápidamente.</p>
+      <div class="htags"><span class="htag">☀️ Lluvias y seca (may–ene)</span><span class="htag">🍈 Tamaños 9 y 12</span><span class="htag">😋 Muy buen sabor</span><span class="htag">❄️ Frío 8–9°C</span><span class="htag">🎨 Vira rápido de color</span></div></div>
+      <div>
+      <img class="hp-photo" src="Fruta_belanova.jpg" alt="Vega F1" style="object-position:center top">
+      <div class="specs"><div class="specs-head">Ficha técnica</div>
+      <div class="spec-r"><span class="sk">Trasplante óptimo</span><span class="sv g">Mayo – Enero</span></div>
+      <div class="spec-r"><span class="sk">Tamaño de fruto</span><span class="sv">9 y 12 (medianos)</span></div>
+      <div class="spec-r"><span class="sk">Firmeza de pulpa</span><span class="sv">Buena</span></div>
+      <div class="spec-r"><span class="sk">Sabor</span><span class="sv g">Muy bueno</span></div>
+      <div class="spec-r"><span class="sk">Productividad</span><span class="sv g">Alta (lluvias y seca)</span></div>
+      <div class="spec-r"><span class="sk">Tolerancia frío transporte</span><span class="sv">8 – 9 °C</span></div>
+      <div class="spec-r"><span class="sk">Maduración en campo</span><span class="sv">Rápida</span></div>
+      <div class="spec-r"><span class="sk">Tolerancia a virus</span><span class="sv g">Alta</span></div>
+      <div class="spec-r"><span class="sk">Evitar trasplante</span><span class="sv r">Febrero – Marzo</span></div>
+      </div></div>
+    </div>
+
+    <div class="hpanel" id="p-redsugar">
+      <div><div class="hvtag">Híbrido F1 · EWS Genetic</div><div class="hname">Red Sugar <span>F1</span></div>
+      <p class="hdesc">Plantas fuertes con alta productividad en lluvias y seca (mayo–enero). Tolerancia a VMAP, Meleira y ácaros.</p>
+      <p class="hdesc">Frutos de excelente tamaño, color intenso y uniforme. Pulpa de muy alta firmeza, superior a los estándares comunes, y alto contenido de grados Brix. Ritmo de maduración más lento — ventaja para exportación de largo recorrido.</p>
+      <div class="htags"><span class="htag">🏆 Firmeza superior al estándar</span><span class="htag">🚢 Exportación largo recorrido</span><span class="htag">🌡️ VMAP + Meleira</span><span class="htag">⏱️ Maduración lenta (ventaja)</span><span class="htag">🍭 Alto Brix</span></div></div>
+      <div>
+      <img class="hp-photo" src="Maradona_con_Gente.jpg" alt="Red Sugar F1">
+      <div class="specs"><div class="specs-head">Ficha técnica</div>
+      <div class="spec-r"><span class="sk">Trasplante óptimo</span><span class="sv g">Mayo – Enero</span></div>
+      <div class="spec-r"><span class="sk">Firmeza de pulpa</span><span class="sv g">Muy alta (superior al estándar)</span></div>
+      <div class="spec-r"><span class="sk">Contenido de grados Brix</span><span class="sv g">Alto</span></div>
+      <div class="spec-r"><span class="sk">Ritmo de maduración</span><span class="sv">Más lento (ventaja logística)</span></div>
+      <div class="spec-r"><span class="sk">Vida de anaquel</span><span class="sv g">Excelente</span></div>
+      <div class="spec-r"><span class="sk">Tolerancia frío transporte</span><span class="sv">8 – 9 °C</span></div>
+      <div class="spec-r"><span class="sk">Tolerancia VMAP</span><span class="sv g">Sí</span></div>
+      <div class="spec-r"><span class="sk">Tolerancia Meleira</span><span class="sv g">Sí</span></div>
+      <div class="spec-r"><span class="sk">Evitar trasplante</span><span class="sv r">Febrero – Marzo</span></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MANEJO TÉCNICO -->
+<section class="section tecnico" id="manejo">
+  <div class="inner">
+    <div class="sh reveal">
+      <div class="ew">Protocolo agronómico</div>
+      <h2 class="st">5 Pilares del Manejo Técnico</h2>
+      <p class="ss">Los híbridos EWS requieren un manejo diferenciado frente a variedades OP para alcanzar su potencial genético completo.</p>
+    </div>
+    <div class="pasos reveal">
+      <div class="paso"><div class="paso-c">1</div><div class="paso-t">Fecha de Trasplante</div><p class="paso-d">Calendario óptimo según variedad y condiciones climáticas de la región.</p></div>
+      <div class="paso"><div class="paso-c">2</div><div class="paso-t">Sexado y Densidad</div><p class="paso-d">1,550–1,750 pl/ha. Sexado a los 45–50 días después del trasplante.</p></div>
+      <div class="paso"><div class="paso-c">3</div><div class="paso-t">Inducción Floral</div><p class="paso-d">Bioestimulación con aminoácidos, citocininas y microelementos desde los 45 ddt.</p></div>
+      <div class="paso"><div class="paso-c">4</div><div class="paso-t">Riego y Nutrición</div><p class="paso-d">Goteo manteniendo capacidad de campo en los primeros 30–40 cm de suelo.</p></div>
+      <div class="paso"><div class="paso-c">5</div><div class="paso-t">Manejo Fitosanitario</div><p class="paso-d">Control preventivo de fitoplasmas, virus, ácaros y hongos de follaje.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDARIO -->
+<section class="section calendario">
+  <div class="inner">
+    <div class="sh reveal">
+      <div class="ew">Calendario de siembra</div>
+      <h2 class="st">Fechas de Trasplante</h2>
+      <p class="ss">Cada híbrido tiene su ventana óptima para maximizar el cuajado de frutos y la calidad.</p>
+    </div>
+    <div class="cal-grid reveal">
+      <div class="cal-card">
+        <div class="cal-head gn">
+          <div class="cal-period">Período óptimo</div>
+          <div class="cal-vars">Maradona & Belanova</div>
+        </div>
+        <div class="cal-body">
+          <p>Se sugiere trasplantar de mayo a septiembre. Trasplantes de octubre a marzo presentan problemas de abortos y deformación de frutos por las condiciones de temperatura y floración invernales.</p>
+          <div class="months">
+            <span class="mo off">Ene</span><span class="mo off">Feb</span><span class="mo off">Mar</span><span class="mo off">Abr</span>
+            <span class="mo on">May</span><span class="mo on">Jun</span><span class="mo on">Jul</span><span class="mo on">Ago</span><span class="mo on">Sep</span>
+            <span class="mo off">Oct</span><span class="mo off">Nov</span><span class="mo off">Dic</span>
+          </div>
+        </div>
+      </div>
+      <div class="cal-card">
+        <div class="cal-head rd">
+          <div class="cal-period">Período óptimo</div>
+          <div class="cal-vars">Vega & Red Sugar</div>
+        </div>
+        <div class="cal-body">
+          <p>Más estables para el cuajado de frutos. Se pueden trasplantar de mayo a enero. No recomendable entre febrero y marzo por las altas temperaturas y sequía que coinciden con la floración.</p>
+          <div class="months">
+            <span class="mo on">Ene</span><span class="mo off">Feb</span><span class="mo off">Mar</span><span class="mo off">Abr</span>
+            <span class="mo on">May</span><span class="mo on">Jun</span><span class="mo on">Jul</span><span class="mo on">Ago</span><span class="mo on">Sep</span><span class="mo on">Oct</span><span class="mo on">Nov</span><span class="mo on">Dic</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DENSIDAD -->
+<section class="section densidad">
+  <div class="inner">
+    <div class="sh reveal">
+      <div class="ew">Plantación</div>
+      <h2 class="st">Densidad de Plantación</h2>
+      <p class="ss">Los híbridos EWS son de copa muy ancha, raíz muy amplia y tallo muy grueso. El espaciamiento correcto es clave para alcanzar el potencial productivo.</p>
+    </div>
+    <div class="dens-grid reveal">
+      <div class="dens-card">
+        <div class="dens-num">1,750</div>
+        <div class="dens-unit">plantas / hectárea</div>
+        <div class="dens-t">Arreglo 3.6 × 1.6 m</div>
+        <p class="dens-d">4 plantas por posición a hilera seguida (40 cm). Menor competencia en primeros 3 meses. Para exportación. Plantas no quedan equidistantes.</p>
+      </div>
+      <div class="dens-card">
+        <div class="dens-num">1,550</div>
+        <div class="dens-unit">plantas / hectárea</div>
+        <div class="dens-t">Arreglo 3.6 × 1.8 m</div>
+        <p class="dens-d">Facilita mecanización y bancos de frutos continuos. Plantas equidistantes. +60 frutos/planta y cosechas de 12 meses de primera calidad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUTRICIÓN -->
+<section class="section nutricion" id="nutricion">
+  <div class="inner">
+    <div class="sh reveal">
+      <div class="ew">Fertilización</div>
+      <h2 class="st">Programa de Nutrición</h2>
+      <p class="ss">Protocolo semanal basado en las demandas nutrimentales reales del cultivo para alcanzar 150 ton/ha.</p>
+    </div>
+    <div class="nut-layout reveal">
+      <div>
+        <div class="nut-table">
+          <div class="nt-head">
+            <span class="nth">Fertilizante</span><span class="nth">M 1–2</span><span class="nth">M 3–4</span><span class="nth">M 5–9</span><span class="nth">M 10–12</span>
+          </div>
+          <div class="nt-row"><span class="nr-n">Fosfonitrato</span><span class="nr-v">0</span><span class="nr-v">5</span><span class="nr-v">6</span><span class="nr-v hl">10</span></div>
+          <div class="nt-row"><span class="nr-n">Ácido Fosfórico</span><span class="nr-v">5</span><span class="nr-v">12</span><span class="nr-v">6</span><span class="nr-v">6</span></div>
+          <div class="nt-row"><span class="nr-n">Nitrato de Potasio</span><span class="nr-v">5</span><span class="nr-v">10</span><span class="nr-v hl">20</span><span class="nr-v">15</span></div>
+          <div class="nt-row"><span class="nr-n">Nitrato de Calcio</span><span class="nr-v">3</span><span class="nr-v">6</span><span class="nr-v hl">25</span><span class="nr-v">20</span></div>
+          <div class="nt-row"><span class="nr-n">Nitrato de Magnesio</span><span class="nr-v">4</span><span class="nr-v">6</span><span class="nr-v">12</span><span class="nr-v">12</span></div>
+          <div class="nt-row"><span class="nr-n">Complejo Micro (Zn,Fe,B,Mo)</span><span class="nr-v">1</span><span class="nr-v">2</span><span class="nr-v">3</span><span class="nr-v">3</span></div>
+          <div class="nt-row" style="background:#e8f5e9"><span class="nr-n" style="font-weight:700;color:#2E7D32">Total kg o L / ha / sem</span><span class="nr-v hl">18</span><span class="nr-v hl">41</span><span class="nr-v hl">72</span><span class="nr-v hl">66</span></div>
+        </div>
+        <p class="nut-note">Programa Maradona F1 · Tamaulipas. Lunes: fosfonitrato + nitrato de potasio + microelementos. Miércoles: ácido fosfórico. Viernes: nitrato de calcio + nitrato de magnesio. Meses 1–4: enraizador cada 15 días (2–4 kg/ha).</p>
+      </div>
+      <div>
+        <div class="nut-info">
+          <h3>Demanda nutrimental para 150 ton/ha</h3>
+          <p>El cultivo de papaya extrae por tonelada producida los siguientes nutrientes. Conocer el estado nutrimental endógeno (muestreo de peciolos mensual desde los 90 ddt) es fundamental para ajustar el programa.</p>
+          <div class="nut-demands">
+            <div class="nd"><div class="nd-val">318 kg</div><div class="nd-lbl">Potasio (K) total</div></div>
+            <div class="nd"><div class="nd-val">265 kg</div><div class="nd-lbl">Nitrógeno (N) total</div></div>
+            <div class="nd"><div class="nd-val">52.5 kg</div><div class="nd-lbl">Calcio (Ca) total</div></div>
+            <div class="nd"><div class="nd-val">30 kg</div><div class="nd-lbl">Fósforo (P) total</div></div>
+            <div class="nd"><div class="nd-val">30 kg</div><div class="nd-lbl">Azufre (S) total</div></div>
+            <div class="nd"><div class="nd-val">27 kg</div><div class="nd-lbl">Magnesio (Mg) total</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RIEGO -->
+<section class="section riego">
+  <div class="inner">
+    <div class="sh reveal">
+      <div class="ew">Agua — el insumo principal</div>
+      <h2 class="st">Manejo del Riego</h2>
+      <p class="ss">En 11 años de siembras comerciales, el agua es el principal insumo de producción. Su manejo correcto es determinante del éxito.</p>
+    </div>
+    <div class="riego-layout reveal">
+      <div class="riego-text">
+        <p>La clave es mantener siempre en <strong>capacidad de campo los primeros 30–40 cm de la superficie del suelo</strong>, en todo el ancho de copa, y mantener seca la raíz pivotante a profundidades mayores de 40–50 cm para evitar pudriciones y pelazón de frutos.</p>
+        <p>La falta de aireación de las raíces provoca pudrición anaeróbica en xilema y floema, con entrada de hongos del suelo que ascienden hasta el pedúnculo. <strong>Una huerta dañada de la raíz es muy difícil y costosa de recuperar.</strong></p>
+        <div style="margin-top:1.375rem">
+          <div class="rkey"><div class="rkey-dot"></div><p class="rkey-t"><strong>Goteo:</strong> Usar 3 o 4 cintillas para humedecer todo el ancho de copa. Especialmente en Maradona y Belanova a los 4–5 meses de trasplante.</p></div>
+          <div class="rkey"><div class="rkey-dot"></div><p class="rkey-t"><strong>Temporada seca:</strong> Mínimo 24 hrs semanales con doble cintilla, o 18 hrs con 3–4 cintillas de goteo a 10 lb de presión.</p></div>
+          <div class="rkey"><div class="rkey-dot"></div><p class="rkey-t"><strong>Aireación crítica:</strong> La raíz debe disponer de 30–40% de aireación dentro del suelo. Usar pulsos de riego para evitar encharcamiento profundo.</p></div>
+        </div>
+      </div>
+      <div>
+        <div class="riego-photo"><img src="Belanova.jpg" alt="Sistema de riego en papaya"></div>
+        <div class="riego-panel">
+          <div class="riego-ph">Programa de Riego · Tamaulipas · Maradona F1</div>
+          <div class="rsr"><span class="rsr-l">Total horas/año (doble cintilla)</span><span class="rsr-v g">632 hrs</span></div>
+          <div class="rsr"><span class="rsr-l">Volumen total de agua / año</span><span class="rsr-v">13,588,000 L</span></div>
+          <div class="rsr"><span class="rsr-l">Mínimo semanal (temporada seca)</span><span class="rsr-v">24 hrs doble cintilla</span></div>
+          <div class="rsr"><span class="rsr-l">Alternativa con 3–4 cintillas</span><span class="rsr-v">18 hrs / semana</span></div>
+          <div class="rsr"><span class="rsr-l">Profundidad óptima humedecida</span><span class="rsr-v g">30 – 40 cm</span></div>
+          <div class="rsr"><span class="rsr-l">Profundidad a mantener seca</span><span class="rsr-v r">&gt; 40 – 50 cm</span></div>
+          <div class="rsr"><span class="rsr-l">Aireación raíz requerida</span><span class="rsr-v g">30 – 40%</span></div>
+          <div class="rsr"><span class="rsr-l">Presión de goteo recomendada</span><span class="rsr-v">10 lb</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUCCIÓN FLORAL -->
+<section class="section induccion">
+  <div class="inner">
+    <div class="sh reveal">
+      <div class="ew">Bioestimulación</div>
+      <h2 class="st">Inducción Floral</h2>
+      <p class="ss">Para facilitar el flujo de floración y cuajado de frutos. Especialmente importante en Maradona F1.</p>
+    </div>
+    <div class="ind-layout reveal">
+      <div>
+        <div class="ind-panel">
+          <div class="ind-ph">Protocolo de bioestimulación (por hectárea)</div>
+          <div class="ind-r"><span class="ind-k">Aminoácidos al 3.5%</span><span class="ind-v">1.0 kg</span></div>
+          <div class="ind-r"><span class="ind-k">Citocininas al 1%</span><span class="ind-v">0.5 L</span></div>
+          <div class="ind-r"><span class="ind-k">Microelementos (B, Zn, Fe, Mo)</span><span class="ind-v">0.5 – 1.0 kg</span></div>
+          <div class="ind-r"><span class="ind-k">Volumen de agua</span><span class="ind-v">600 L</span></div>
+          <div class="ind-r"><span class="ind-k">Inicio de aplicación</span><span class="ind-v">45 ddt (sexado)</span></div>
+          <div class="ind-r"><span class="ind-k">Frecuencia</span><span class="ind-v">Semanal × 3 semanas</span></div>
+          <div class="ind-r"><span class="ind-k">Método</span><span class="ind-v">Aspersión al ápice</span></div>
+          <div class="ind-r"><span class="ind-k">Compatible con</span><span class="ind-v">Insecticidas y fungicidas</span></div>
+          <div class="ind-r"><span class="ind-k">Incompatible con</span><span class="ind-v ind-bad">Cobres y aluminio</span></div>
+        </div>
+      </div>
+      <div class="ind-info">
+        <img class="ind-photo" src="frutamaradona.jpg" alt="Floración de papaya">
+        <p>Cuando los híbridos se trasplantan en época de lluvias, el sexado se puede realizar a los <strong style="color:#fff">45–50 días</strong>. A partir de entonces es importante cuantificar las flores por axila y los frutos cuajados semanalmente.</p>
+        <p>Con <strong style="color:#a5d6a7">2 frutos cuajados por semana</strong> durante el período fresco (oct–mar) llegaremos a <strong style="color:#fff">48 frutos por planta</strong>. Con 3 frutos cuajados por semana, podríamos llegar a <strong style="color:#fff">72 frutos por planta</strong>.</p>
+        <div class="ind-alert"><strong>Nutrición foliar complementaria:</strong> Calcio-Boro y Boro-Molibdeno cada 2 semanas post floración. Cobre-Zinc quelatados cada 2 semanas para lignificar corteza del fruto y tolerancia a Colletotrichum. Manganeso y Fierro quelatados mensualmente para mejorar firmeza de pulpa y vida de anaquel.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FITOSANITARIO -->
+<section class="section fito" id="fitosanitario">
+  <div class="inner">
+    <div class="sh reveal">
+      <div class="ew">Sanidad del cultivo</div>
+      <h2 class="st">Manejo Fitosanitario</h2>
+      <p class="ss">Prevención y control de las principales amenazas sanitarias del cultivo de papaya en México.</p>
+    </div>
+    <div class="fito-grid reveal">
+      <div class="fc">
+        <div class="fc-top"><div class="fi r"></div><div class="fc-cnt"><h4>Chicharritas & Fitoplasmas</h4><p>Empoasca y otros vectores transmiten fitoplasmas causando cogollo arrepollado, acortamiento de entrenudos, clorosis y necrosis. Se intensifican en otoño–invierno con migraciones de insectos.</p></div></div>
+        <div class="fc-note r">Trampas amarillas desde el inicio. Barreras con gramíneas y girasol. Control preventivo en los primeros 5 meses de trasplante.</div>
+      </div>
+      <div class="fc">
+        <div class="fc-top"><div class="fi b"></div><div class="fc-cnt"><h4>Hongos del Follaje y Fruto</h4><p>En períodos de 8–10 días con temperaturas 15–20°C y alta humedad, <em>Asperisporium carica</em> y <em>Corynespora cassicola</em> atacan follaje y frutos.</p></div></div>
+        <div class="fc-note">Preventivos: Clorotalonil, Oxicloruro de Cobre, Mancosol, Difeconazol. Curativos: Cyprodinil, Fludioxonil (Switch), Azoxystrobin (Amistar), Pyraclostrobin.</div>
+      </div>
+      <div class="fc">
+        <div class="fc-top"><div class="fi g"></div><div class="fc-cnt"><h4>Control Químico de Fitoplasma</h4><p>Cada 7–10 días, 3 veces consecutivas: Aminoácidos 3.5% (1 kg) + Citocininas 1% (0.5 L) + Oxicloruro de Cobre 50% (1 kg) + Oxitetraciclina 5% (1.2 kg) + Microelementos Zn,Fe + Insecticida sistémico. En 600 L agua.</p></div></div>
+        <div class="fc-note g">Muy importante buena cobertura. Permite convivir con el problema y mantener producción de calidad.</div>
+      </div>
+      <div class="fc">
+        <div class="fc-top"><div class="fi g"></div><div class="fc-cnt"><h4>Síntomas de Fitoplasma</h4><p>Identificar: hojas arrosetadas, clorosis apical "atigramiento", manchas blancas en entrenudos, tallo adelgazado, frutos estrechos en el pedúnculo.</p></div></div>
+        <div class="fc-note">Diferenciar de virosis: manchas aceitosas en tallos, anillos concéntricos en frutos. Pueden coexistir. Aplicar aminoácidos + citocininas + oxitetraciclina + cobres + Zn y Fe cada 10 días.</div>
+      </div>
+      <div class="fc">
+        <div class="fc-top"><div class="fi r"></div><div class="fc-cnt"><h4>Insecticidas Recomendados</h4><p>Para control de Empoasca, Psílidos y Cicadellidae. Aplicar preventivamente al detectar presencia inicial, especialmente en los primeros 5 meses de trasplante.</p></div></div>
+        <div class="fc-note r">Acetamiprid · Buprofezin · Fenpropatrin · Flupiradifurone (Sivanto) · Thiametoxam (Actara) · Pymetrozine (Plenum) · Imidacloprid · Spirotetramat · Pyriproxifen</div>
+      </div>
+      <div class="fc">
+        <div class="fc-top"><div class="fi b"></div><div class="fc-cnt"><h4>Pudrición Radicular</h4><p>La falta de aireación provoca pudrición anaeróbica. Los hongos del suelo ascienden hasta el pedúnculo causando pelazón de frutos. Una huerta dañada es muy difícil y costosa de recuperar.</p></div></div>
+        <div class="fc-note">Mantener la raíz seca a más de 40–50 cm. Pulsos de riego. 30–40% de aireación en la zona radicular activa. No exceder la capacidad de campo superficial.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="fb">
+        <img src="EWS_Logo_RGB.png" alt="East-West Seed" style="height:44px;width:auto;filter:brightness(0) invert(1);">
+      </div>
+      <div class="fsub">Papaya Híbrida · México · Dr. Enrique Vázquez García</div>
+      <div class="fsl">"Better Seeds for Better Yield"</div>
+    </div>
+    <div class="flinks">
+      <a href="#hibridos">Híbridos</a>
+      <a href="#manejo">Manejo Técnico</a>
+      <a href="#nutricion">Nutrición</a>
+      <a href="#fitosanitario">Fitosanitario</a>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>© East-West Seed · Manejo Técnico de Híbridos de Papaya · México</span>
+    <span>Farmers at the heart of everything we do</span>
+  </div>
+</footer>
+
+<script>
+function showP(name, btn) {
+  document.querySelectorAll('.hpanel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.hb').forEach(b => b.classList.remove('active'));
+  document.getElementById('p-' + name).classList.add('active');
+  btn.classList.add('active');
+}
+const obs = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
