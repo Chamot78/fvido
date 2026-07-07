@@ -4,7 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Papaya Híbrida | East-West Seed México</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Tipografía: Trade Gothic (fuente comercial, no disponible en Google Fonts).
+     Opción A (recomendada) — Adobe Fonts / Typekit: crea un kit con Trade Gothic y descomenta:
+     <link rel="stylesheet" href="https://use.typekit.net/TU_KIT.css">
+     Opción B — auto-alojada: sube los archivos .woff2/.woff a /fonts (ver @font-face abajo). -->
+<style>
+/* Trade Gothic — auto-alojada. Coloca los archivos en la carpeta /fonts del repo.
+   Si usas Adobe Fonts (Opción A), puedes borrar estos @font-face. */
+@font-face{
+  font-family:'Trade Gothic';
+  src:url('fonts/TradeGothic-Regular.woff2') format('woff2'),
+      url('fonts/TradeGothic-Regular.woff')  format('woff');
+  font-weight:300 500; font-style:normal; font-display:swap;
+}
+@font-face{
+  font-family:'Trade Gothic';
+  src:url('fonts/TradeGothic-Bold.woff2') format('woff2'),
+      url('fonts/TradeGothic-Bold.woff')  format('woff');
+  font-weight:600 900; font-style:normal; font-display:swap;
+}
+</style>
 <style>
 :root {
   --ews-red:      #C8102E;
@@ -19,8 +38,8 @@
   --ews-border:   #E0E0E0;
   --ews-white:    #FFFFFF;
   --ews-cream:    #FAFAF8;
-  --font-body:    'Inter', sans-serif;
-  --font-dis:     'Barlow', sans-serif;
+  --font-body:    'Trade Gothic', 'Trade Gothic LT Std', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-dis:     'Trade Gothic', 'Trade Gothic LT Std', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
